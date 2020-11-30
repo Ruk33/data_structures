@@ -9,11 +9,11 @@ CFLAGS=-std=c99 -Wall -Wextra
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 lib: $(O_FILES)
-	ar -cvq libdatastructures.a *.o
+	ar rcs libdatastructures.a $(O_FILES)
 
 test:
-	$(CC) $(CFLAGS) test.c C_FILES
+	$(CC) $(CFLAGS) test.c $(C_FILES)
 
 .PHONY: clean
 clean:
-	rm -f *.o
+	rm -f $(O_FILES)

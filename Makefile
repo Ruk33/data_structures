@@ -6,7 +6,7 @@ CC=gcc
 CFLAGS=-std=c99 -Wall -Wextra
 
 %.o: %.c $(H_FILES)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) $(CFLAGS) -fPIC -c -o $@ $<
 
 lib: $(O_FILES)
 	ar rcs libdatastructures.a $(O_FILES)

@@ -11,6 +11,9 @@ CFLAGS=-std=c99 -Wall -Wextra
 lib: $(O_FILES)
 	ar rcs libdatastructures.a $(O_FILES)
 
+lib_shared: $(O_FILES)
+	$(CC) -fPIC -shared -o libdatastructures.so $(O_FILES)
+
 test:
 	$(CC) $(CFLAGS) test.c $(C_FILES)
 
